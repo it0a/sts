@@ -12,9 +12,9 @@
                  [mysql/mysql-connector-java "5.1.6"]]
   :plugins [[lein-ring "0.8.13"]
             [ragtime/ragtime.lein "0.3.8"]]
-  :ring {:handler cljrest.handler/app}
+  :ring {:handler sts.handler/app}
   :ragtime {:migrations ragtime.sql.files/migrations
-            :database "jdbc:mysql://localhost:3306/sales_tax?user=cljrest&password=cljrest"}
+            :database "jdbc:mysql://localhost:3306/sales_tax?user=sts&password=sts"}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring-mock "0.1.5"]]}})
