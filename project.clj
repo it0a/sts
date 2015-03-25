@@ -14,7 +14,7 @@
             [ragtime/ragtime.lein "0.3.8"]]
   :ring {:handler sts.handler/app}
   :ragtime {:migrations ragtime.sql.files/migrations
-            :database "jdbc:mysql://localhost:3306/sales_tax?user=sts&password=sts"}
+            :database "jdbc:mysql://localhost:3306/sales_tax?user=cljrest&password=cljrest"}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring-mock "0.1.5"]]}})
