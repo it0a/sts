@@ -8,18 +8,8 @@
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))
 
 (defroutes app-routes
-  (GET "/invoice" []
-       (response (query/get-invoices)))
-  (GET "/invoice/total" []
-       (response (query/sum-invoices)))
-  (GET "/invoice/:id" [id]
-       (response (query/get-invoice id)))
-  (POST "/invoice" request
-        (let [number (or (get-in request [:params :number])
-                         (get-in request [:body :number]))
-              amount (or (get-in request [:params :amount])
-                         (get-in request [:body :amount]))]
-        (response (query/add-invoice number amount))))
+  (GET "/tax/:id" [id]
+       (response (query/get-tax id)))
   (route/resources "/")
   (route/not-found "Not Found"))
 
