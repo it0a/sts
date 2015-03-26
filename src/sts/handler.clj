@@ -10,6 +10,8 @@
 (defroutes app-routes
   (GET "/tax/:id" [id]
        (response (query/get-tax id)))
+  (GET "/tax/zip/:zip" [zip]
+       (response (query/get-tax-by-zip zip)))
   (route/resources "/")
   (route/not-found "Not Found"))
 
