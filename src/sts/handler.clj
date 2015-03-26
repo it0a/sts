@@ -12,6 +12,8 @@
        (response (query/get-tax id)))
   (GET "/tax/zip/:zip" [zip]
        (response (query/get-tax-by-zip zip)))
+  (GET "/tax/city/:city" [city]
+       (response (query/get-tax-by-city city)))
   (route/resources "/")
   (route/not-found "Not Found"))
 
